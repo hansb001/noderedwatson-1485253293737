@@ -1,0 +1,14 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: noderedwatson
+  host: noderedwatsonUK
+  disk_quota: 1024M
+  services:
+  - noderedwatson-cloudantNoSQLDB
+  - Text to Speech-33
+  - Relationship Extraction-hj
+  - AlchemyAPI-c4
+  command: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./bluemix-settings.js -v
